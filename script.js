@@ -97,7 +97,6 @@ function newTask(event) {
 
 function deleteTask(id) {
   let deletedId;
-
   for (let index in gorevListesi) {
     if (gorevListesi[index].id == id) {
       deletedId = index;
@@ -115,15 +114,11 @@ function editTask(taskId, taskName) {
   taskInput.value = taskName;
   taskInput.focus();
   taskInput.classList.add("active");
-
-  console.log("edit id:", editId);
-  console.log("edit mode", isEditTask);
 }
 
 btnClear.addEventListener("click", function () {
   gorevListesi.splice(0, gorevListesi.length);
   localStorage.setItem("gorevListesi", JSON.stringify(gorevListesi));
-
   displayTasks();
 });
 
